@@ -1,0 +1,507 @@
+const prompt = require("prompt-sync")();
+
+//ejercicio_1: verificar si un numero es positivo, negativo o es cero
+let numero = parseInt(prompt("ingrese un numero"))
+if(isNaN(numero)){
+    console.log("verifique que al ingresar numero no contenga letras")
+}else{
+    if(numero == 0){
+        console.log("el numero que ingreso es cero")
+    }else if(numero > 0){
+        console.log("el numero: "+numero + " es positivo")
+    }else{
+        console.log("el numero: "+numero+ " es negativo")
+    }
+}
+
+//ejercicio_2: pedir la edad de una persona y mostrar si es menor o mayor de edad
+let edda = parseInt(prompt("ingrese su edad"))
+if(isNaN(edda)){
+    console.log("verifique que al ingresar la edad no contenga letras")
+}else{
+    if(edda > 0 && edda <= 17){
+        console.log("es menor de edad")
+    }else if(edda > 17){
+        console.log("es mayor de edad")
+    }else{
+        console.log("edad invalida")
+    }
+}
+
+//ejercicio_3: leer 2 numeros y mostrar cual es mayor o si son iguales
+let num1 = parseInt(prompt("ingrese el primer numero: "))
+let num2 = parseInt(prompt("ingrese el segundo numero: "))
+
+if(isNaN(num1)|| isNaN(num2)){
+  console.log("verifique que los numeros inresados no contenga letras")
+}else{
+    if(num1 > num2){
+        console.log("el numero mayor entre: "+num1+", "+num2+" es: "+num1)
+    }else if(num2 > num1){
+        console.log("el numero mayor entre: "+num1+", "+num2+" es: "+num2)
+    }else{
+        console.log("son iguales")
+    }
+}
+
+//ejercicio_4: ingresar un numero y verificar si es par o impar
+let numer = parseInt(prompt("ingrese el numero: "))
+
+if(isNaN(numer)){
+    console.log("verifique que no ingreso letras")
+}else{
+    if(numer % 2 == 0){
+        console.log("el numero es par")
+    }else{
+        console.log("el numero es impar")
+    }
+}
+
+//ejercicio_5: solicitar una calificacion (0-10) y mostrar si esta aprobado o reprobado
+let nota = parseFloat(prompt("ingrese la calificacion (0-10): "))
+
+if(isNaN(nota)){
+    console.log("verifique que no ingreso letras.")
+}else{
+    if(nota >= 0 && nota <=10){
+        if(nota > 6){
+            console.log("aprobado")
+        }else{
+            console.log("reprobado")
+        }
+    }else{
+        console.log("nota invalida")
+    }
+}
+
+//ejercicio_6: pedir un numero del 1 al 7 y mostrar el dia de la semana correspondiente
+let numD = parseInt(prompt("ingrese un numero del (1-7): "))
+
+if(isNaN(numD)){
+    console.log("verifique que no ingreso letras")
+}else{
+    if(numD >= 1 && numD <= 7){
+        if(numD == 1){
+            console.log("Lunes")
+        }else if(numD == 2){
+            console.log("Martes")
+        }else if(numD == 3){
+            console.log("Miercoles")
+        }else if(numD == 4){
+            console.log("Jueves")
+        }else if(numD == 5){
+            console.log("Viernes")
+        }else if(numD == 6){
+            console.log("Sabado")
+        }else{
+            console.log("domingo")
+        }
+    }else{
+        console.log("recuerde que solo es de (1-7): ")
+    }
+}
+//mismo ejercicio 6 pero en arreglo
+let dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+let numm = parseInt(prompt("Ingrese un número del 1 al 7: "));
+
+if (isNaN(numm)) {
+    console.log("Verifique que no ingresó letras");
+
+} else if (numm >= 1 && numm <= 7) {
+
+    console.log("El día es: " + dias[numm - 1]);
+
+} else {
+    console.log("Recuerde que solo es de 1 a 7");
+}
+
+//ejercicio_7: Leer una temperatura y mostrar si hace frío, templado o calor.
+let tempValor = parseFloat(prompt("Ingrese la temperatura:"));
+
+if (tempValor < 15) {
+    console.log("Hace frío");
+} else if (tempValor >= 15 && tempValor <= 25) {
+    console.log("Está templado");
+} else {
+    console.log("Hace calor");
+}
+
+
+//8 Pedir una contraseña y verificar si es correcta o incorrecta.
+let claveUser = prompt("Ingrese la contraseña:");
+let claveReal = "12345";
+
+if (claveUser === claveReal) {
+    console.log("Contraseña correcta");
+} else {
+    console.log("Contraseña incorrecta");
+}
+
+
+//9. Leer tres números y mostrar el mayor (usar if anidados).
+let numA = parseInt(prompt("Ingrese primer número:"));
+let numB = parseInt(prompt("Ingrese segundo número:"));
+let numC = parseInt(prompt("Ingrese tercer número:"));
+
+if (numA > numB) {
+    if (numA > numC) {
+        console.log("El mayor es: " + numA);
+    } else {
+        console.log("El mayor es: " + numC);
+    }
+} else {
+    if (numB > numC) {
+        console.log("El mayor es: " + numB);
+    } else {
+        console.log("El mayor es: " + numC);
+    }
+}
+
+
+//10. Solicitar el salario de un empleado y calcular el 10% de bono si gana más de $500.
+let sueldoBase = parseFloat(prompt("Ingrese su salario:"));
+let bonoExtra = 0;
+
+if (sueldoBase > 500) {
+    bonoExtra = sueldoBase * 0.10;
+}
+
+let totalPago = sueldoBase + bonoExtra;
+
+console.log("Pago total: $" + totalPago);
+
+
+//11. Mostrar los números del 1 al 10 usando for. 
+for (let contador = 1; contador <= 10; contador++) {
+    console.log(contador);
+}
+
+
+//12. Solicitar un número y mostrar su tabla de multiplicar.
+let numeroTabla = parseInt(prompt("Ingrese un número:"));
+
+for (let multi = 1; multi <= 10; multi++) {
+    console.log(numeroTabla + " x " + multi + " = " + (numeroTabla * multi));
+}
+
+
+//13. Calcular la suma de los primeros N números usando un acumulador.
+let limite = parseInt(prompt("Ingrese N:"));
+let sumaTotal = 0;
+
+for (let x = 1; x <= limite; x++) {
+    sumaTotal = sumaTotal + x;
+}
+
+console.log("La suma es: " + sumaTotal);
+
+
+//14. Contar cuántos números pares hay entre 1 y 50.
+let totalPares = 0;
+
+for (let n = 1; n <= 50; n++) {
+    if (n % 2 === 0) {
+        totalPares++;
+    }
+}
+
+console.log("Cantidad de pares: " + totalPares);
+
+
+//15. Solicitar notas hasta que se ingrese -1 y calcular el promedio.
+let notaValor = 0;
+let sumaNotas = 0;
+let cantidadNotas = 0;
+
+while (notaValor !== -1) {
+
+    notaValor = parseFloat(prompt("Ingrese nota (-1 para salir):"));
+
+    if (notaValor !== -1) {
+        sumaNotas = sumaNotas + notaValor;
+        cantidadNotas++;
+    }
+}
+
+let promedioFinal = sumaNotas / cantidadNotas;
+
+console.log("Promedio: " + promedioFinal);
+
+
+//16. Pedir números hasta que se ingrese un 0 (usar bandera).
+let num  = parseInt(prompt("ingrese numero y (0 para acabar)"))
+let bandera = 0
+let cont = 0
+if(isNaN(num)){
+    console.log("mire que no ingreso letras")
+}else{
+    while(num !== bandera){
+        cont= cont+1
+        num  = parseInt(prompt("ingrese otro numero y (0 para acabar)"))
+        console.log("los numeros ingresados son: "+ num)
+    }
+    console.log("cantidad de numeros ingresados: "+cont)
+}  
+
+
+//17. Leer 5 números y guardarlos en un array, luego mostrarlos.
+let nummearray = []
+for(let i=0; i<5; i++){
+  let numme = parseInt(prompt("ingrese numero "+(i+1)+ " : "))
+  nummearray[i] = numme
+}
+console.log("los numeros ingresados son: ", nummearray)
+
+
+//18. Determinar el mayor número de un arreglo.
+let N = parseInt(prompt("ingrese los numeros que estaran en el arreglo"))
+let numarray = []
+
+for(let i=0; i<N; i++){
+    let numerr = parseInt(prompt("ingrese el numero de arreglo numero "+(i+1)+" :"))
+    numarray[i] = numerr
+}
+let esMayor = numarray[0]
+
+for(let i=1; i<numarray.length; i++){
+    if(numarray[i]>esMayor){
+        esMayor=numarray[i]
+    }
+}
+console.log("en numero mayor del array es: ", esMayor)
+
+
+//19. Contar cuántos valores ingresados son positivos y negativos.
+let n = parseInt(prompt("ingrese los numeros que estaran en el arreglo"))
+let numarra = []
+
+for(let i=0; i<n; i++){
+    let numer = parseInt(prompt("ingrese el numero de arreglo numero "+(i+1)+" :"))
+    numarra[i] = numer
+}
+
+for(let i=0; i<numarra.length; i++){
+    if(numarra[i]>0){
+        console.log(numarra[i]," son positivos")
+    }else{
+        console.log(numarra[i], "es negativos")
+    }
+}
+console.log("Números ingresados:", numarra);
+
+
+
+//20. Simular un menú simple con opciones (1–Sumar, 2–Restar, 3–Salir).
+let opcion;
+
+do {
+      opcion = parseInt(prompt(
+        `Menú:
+1 – Sumar
+2 – Restar
+3 – Salir
+Ingrese su opción:`
+    ));
+    if (opcion === 1) {
+        let a = parseFloat(prompt("Ingrese el primer número:"));
+        let b = parseFloat(prompt("Ingrese el segundo número:"));
+        console.log("La suma es: " + (a + b));
+    } else if (opcion === 2) {
+        let a = parseFloat(prompt("Ingrese el primer número:"));
+        let b = parseFloat(prompt("Ingrese el segundo número:"));
+        console.log("La resta es: " + (a - b));
+    } else if (opcion === 3) {
+        console.log("Saliendo del programa...");
+    } else {
+        console.log("Opción inválida, intente de nuevo.");
+    }
+
+} while (opcion !== 3);
+
+
+//21. Calcular el factorial de un número usando while.
+let numf = parseInt(prompt("ingrese el numero del factorial: "))
+let i = 1
+let F = 1
+
+while(i <= numf){
+    F = F*i
+    i++
+}
+console.log("el numero: ",numf," factorial es: ",F)
+
+//22. Generar los primeros N números pares.
+let nn = parseInt(prompt("ingrese el valor de n"))
+let pares = 0
+
+for(let i=1; pares<nn; i++){
+    if(i%2===0){
+    console.log("los numeros pares son: ",i) 
+    pares++
+    }
+}
+
+//23. Solicitar números hasta que se ingrese uno repetido (usar array y bandera).
+let numeros = [];
+let cantidad = 0; 
+let repetido = false;
+
+while (!repetido) {
+    let num = parseInt(prompt("Ingrese un número:"));
+
+    for (let i = 0; i < cantidad; i++) {
+        if (numeros[i] === num) {
+            repetido = true;
+        }
+    }
+
+    if (!repetido) {
+        numeros[cantidad] = num;
+        cantidad++;
+    }
+}
+
+console.log("Número repetido detectado. Fin del programa.");
+console.log("Números ingresados: ", numeros);
+
+
+//24. Registrar nombres y edades y mostrar solo los mayores de edad.
+let nombre = [];
+let edade = [];
+let cantida = parseInt(prompt("¿Cuántas personas desea registrar?"));
+
+for (let i = 0; i < cantida; i++) {
+    nombre[i] = prompt("Ingrese el nombre de la persona " + (i + 1) + ":");
+    edade[i] = parseInt(prompt("Ingrese la edad de " + nombre[i] + ":"));
+}
+
+console.log("Personas mayores de edad:");
+
+for (let i = 0; i < cantida; i++) {
+    if (edade[i] >= 18) {
+        console.log(nombre[i] + " - " + edade[i] + " años");
+    }
+}
+
+
+//25. Calcular el promedio de notas y mostrar cuántas están sobre el promedio.
+let not = [];
+let cantid = parseInt(prompt("Ingrese la cantidad de notas:"));
+let sum = 0;
+
+// Registrar las notas
+for (let i = 0; i < cantid; i++) {
+    not[i] = parseFloat(prompt("Ingrese la nota " + (i + 1) + ":"));
+    sum += not[i];
+}
+
+// Calcular promedio
+let promed = sum / cantid;
+
+console.log("El promedio de las notas es: " + promed);
+
+// Contar cuántas notas están sobre el promedio
+let contado = 0;
+for (let i = 0; i < cantid; i++) {
+    if (not[i] > promed) {
+        contado++;
+    }
+}
+
+console.log("Cantidad de notas sobre el promedio: " + contado);
+
+
+//26. Simular una caja registradora con acumulador de ventas.
+let total = 0;
+let venta = parseFloat(prompt("Ingrese el precio de la venta (0 para terminar):"));
+
+while (venta !== 0) {
+    total += venta; // sumar la venta al total
+    venta = parseFloat(prompt("Ingrese el precio de la venta (0 para terminar):"));
+}
+
+console.log("El total acumulado de ventas es: $" + total);
+
+
+//27. Leer productos y precios y calcular el total compra.
+let produ = [];
+let precos = [];
+let tota = 0;
+
+let cant = parseInt(prompt("Ingrese la cantidad de productos:"));
+
+for (let i = 0; i < cant; i++) {
+    produ[i] = prompt("Ingrese el nombre del producto " + (i + 1) + ":");
+    precos[i] = parseFloat(prompt("Ingrese el precio de " + produ[i] + ":"));
+    tota += precos[i];
+}
+
+console.log("Productos comprados:");
+for (let i = 0; i < cant; i++) {
+    console.log(produ[i] + " - $" + precos[i]);
+}
+
+console.log("Total de la compra: $" + tota);
+
+
+//28. Contar vocales en una palabra ingresada.
+let palabra = prompt("Ingrese una palabra:");
+let contador = 0;
+
+for (let i = 0; i < palabra.length; i++) {
+    let letra = palabra[i].toLowerCase(); // para no diferenciar mayúsculas y minúsculas
+    if (letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u') {
+        contador++;
+    }
+}
+
+console.log("La palabra tiene " + contador + " vocales.");
+
+
+//29. Almacenar estudiantes en un diccionario (objeto) con nombre y nota, luego mostrar aprobados.
+let estudian = {};
+let l = parseInt(prompt("Ingrese la cantidad de estudiantes:"));
+
+// Registrar estudiantes
+for (let i = 0; i < l; i++) {
+    let nommbre = prompt("Ingrese el nombre del estudiante " + (i + 1) + ":");
+    let notaas = parseFloat(prompt("Ingrese la nota de " + nommbre + ":"));
+
+    estudian[nombre] = notaas;
+}
+
+console.log("Estudiantes aprobados:");
+
+// Mostrar aprobados (nota >= 7)
+for (let nommbre in estudian) {
+    if (estudiant[nommbre] >= 7) {
+        console.log(nommbre + " - Nota: " + estudiant[nommbre]);
+    }
+}
+
+
+//30. Simular un login con máximo 3 intentos usando bandera y contador.
+let usuarioCorrecto = "admin";
+let claveCorrecta = "1234";
+
+let intentos = 0;
+let acceso = false; // bandera
+
+while (intentos < 3 && acceso === false) {
+
+    let usuario = prompt("Ingrese usuario:");
+    let clave = prompt("Ingrese contraseña:");
+
+    if (usuario === usuarioCorrecto && clave === claveCorrecta) {
+        acceso = true; // bandera cambia
+        console.log("Acceso permitido. Bienvenido.");
+    } else {
+        intentos++;
+        console.log("Datos incorrectos. Intento " + intentos + " de 3");
+    }
+}
+
+if (acceso === false) {
+    console.log("Cuenta bloqueada. Demasiados intentos.");
+}
